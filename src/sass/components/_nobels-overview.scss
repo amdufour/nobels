@@ -1,5 +1,6 @@
 .graphes-wrapper {
   position: relative;
+  margin-top: 100px;
 }
 #nobel-overview {
   position: relative;
@@ -44,6 +45,7 @@
   textPath {
     font-family: $fontSecondary;
     font-size: 2rem;
+    font-weight: 600;
     text-transform: uppercase;
     fill: $golden;
   }

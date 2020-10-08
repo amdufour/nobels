@@ -1,10 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Raleway:ital,wght@0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Raleway:ital,wght@0,400;0,600;1,400&display=swap');
 
 $fontPrimary: 'Open Sans', sans-serif;
 $fontSecondary: 'Raleway', sans-serif;
 $fontSize: 1.6rem;
 
+h1, h2 {
+  font-family: $fontSecondary;
+}
 h1 {
-  margin: 80px 0 40px;
-  font-size: 3.5rem;
+  margin: 150px 0 0;
+  font-size: 6rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $golden;
+}
+h2 {
+  margin: 30px 0 15px;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+h3 {
+  margin: 0 0 7px;
 }

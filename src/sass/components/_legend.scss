@@ -1,0 +1,50 @@
+.legend {
+  margin: 60px 0;
+  
+  // Category
+  .nobel-category {
+    height: 200px;
+    background-image: url(../svg/legend-category.svg);
+    background-repeat: no-repeat;
+    background-size: 250px auto;
+    background-position: 0 0;
+  }
+
+  // Colors
+  .colors-gender,
+  .colors-continent {
+    margin-left: 5px;
+    margin-bottom: 10px;
+  }
+  ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    li {
+      padding: 7px 0;
+      span {
+        display: inline-block;
+        vertical-align: middle;
+        &.color,
+        &.continent {
+          width: 25px;
+          height: 25px;
+          border-radius: 50%;
+          &.color-women { background: $pink; }
+          &.color-men { background: $blue; }
+          &.continent-africa { background: $africa; }
+          &.continent-asia { background: $asia; }
+          &.continent-europe { background: $europe; }
+          &.continent-oceania { background: $oceania; }
+          &.continent-north-america { background: $north-america; }
+          &.continent-south-america { background: $south-america; }
+          &.continent-organization { background: $international; }
+        }
+        &.label {
+          margin-left: 10px;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+}
