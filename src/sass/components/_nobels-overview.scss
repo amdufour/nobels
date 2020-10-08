@@ -6,6 +6,17 @@
   z-index: 100;
 }
 
+// Year circles
+.overview-circular-axis {
+  fill: transparent;
+  &.markerYear {
+    fill: #fff;
+  }
+  &.highlighted {
+    fill: rgba($textPale, 0.3);
+  }
+}
+
 // Nobel arcs
 .nobel-arc {
   stroke-width: 2px;

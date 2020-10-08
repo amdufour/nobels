@@ -106,10 +106,17 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .attr('class', 'axis axis-x')
     .attr('transform', 'translate(0,' + height_sex_year/2 + ')')
     .call(d3.axisBottom(x_scale_sex_year)
-      .tickValues([1901, 1920, 1940, 1960, 1980, 2000, 2019])
+      .tickValues(years)
       .tickFormat(d3.format(""))
     )
     .selectAll('text')
+      .attr('class', d => {
+        let mainTickClass = ''
+        if (highlightedYears.indexOf(d) > 0) {
+          mainTickClass = 'main-tick-label';
+        }
+        return `tick-label tick-label-${d} ${mainTickClass}`;
+      })
       .attr('text-achor', 'start')
       .attr('dx', '22px')
       .attr('dy', '-5px')

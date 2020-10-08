@@ -3,6 +3,9 @@
 
 A d3.js visualization of Nobel prizes over the years.
 
+# This project was built for learning purposes
+The file structure and many code elements are not properly structured and would need to be refactored.
+
 # To run the project locally
 1. In bash/terminal/command line, `cd` into your project directory.
 2. Run `npm install` to install required files and dependencies.

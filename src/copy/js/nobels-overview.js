@@ -1,14 +1,19 @@
 const marginsOverview = { top: 100, right: 100, bottom: 100, left: 100 };
 const widthOverview = 1540;
-const heightOverview = 1000;
+const heightOverview = 1170;
 let outerRadius = widthOverview/2;
 const innerRadius = 100;
-const yearHeight = 2.5; // Height of a year on the disk (in pixels)
-const radialSpacing = 0; // Radial space between years (in pixels)
+const yearHeight = 4; // Height of a year on the disk (in pixels)
+const radialSpacing = 1; // Radial space between years (in pixels)
 const yearMin = 1901;
 let yearMax = 2019;
 let yearsSpan = 100; // Difference between the latest and the first year (will be calculated once data is fetched)
 const anglePadding = 5; // Padding between categories (in degrees)
+let years = [];
+for (let i = yearMin; i <= yearMax; i++) {
+  years.push(i);
+}
+const highlightedYears = [1901, 1920, 1940, 1960, 1980, 2000, 2019];
 
 function getOuterRadius(data) {
   yearMax = d3.max(data, d => parseInt(d.year));
@@ -176,20 +181,34 @@ function generateOverview(data, categories, dataYearSex, dataCategorySex) {
     .data(dataYearSex)
     .enter()
     .append('path')
-      .attr('class', 'overview-circular-axis')
+      .attr('class', d => {
+        let visibilityClass = '';
+        if (circleAxisPoints.indexOf(parseInt(d.year)) !== -1 || (d.num_male === '0' && d.num_female === '0')) {
+          visibilityClass = 'markerYear';
+        }
+        return `overview-circular-axis overview-circular-axis-${d.year} ${visibilityClass}`;
+      })
       .attr('d', d => {
+        let axisWidth = 2;
+        if (circleAxisPoints.indexOf(parseInt(d.year)) !== -1 || (d.num_male === '0' && d.num_female === '0')) {
+          axisWidth = radialSpacing;
+        }
         return circlesArc({
           innerRadius: ((d.year - yearMin) * yearHeight) + innerRadius - 1,
-          outerRadius: ((d.year - yearMin) * yearHeight) + innerRadius + (yearHeight - radialSpacing) + 1
+          outerRadius: ((d.year - yearMin) * yearHeight) + innerRadius + (yearHeight - axisWidth) + 1
         });
       })
-      .attr('fill', d => {
-        // Show a white circle every 10 years and for years where no Nobels were given
-        if (circleAxisPoints.indexOf(parseInt(d.year)) !== -1 || (d.num_male === '0' && d.num_female === '0')) {
-          return '#fff';
-        } else {
-          return 'none';
-        }
+      .on('mouseenter', d => {
+        d3.select(`.overview-circular-axis-${d.year}`)
+          .classed('highlighted', true);
+        d3.select(`.tick-label-${d.year}`)
+          .classed('highlighted', true);
+      })
+      .on('mouseleave', d => {
+        d3.select(`.overview-circular-axis-${d.year}`)
+          .classed('highlighted', false)
+        d3.select(`.tick-label-${d.year}`)
+          .classed('highlighted', false);
       });
 
   // Append year labels
