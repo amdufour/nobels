@@ -112,7 +112,7 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .selectAll('text')
       .attr('class', d => {
         let mainTickClass = ''
-        if (highlightedYears.indexOf(d) > 0) {
+        if (highlightedYears.indexOf(d) >= 0) {
           mainTickClass = 'main-tick-label';
         }
         return `tick-label tick-label-${d} ${mainTickClass}`;

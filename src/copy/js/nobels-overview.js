@@ -13,7 +13,7 @@ let years = [];
 for (let i = yearMin; i <= yearMax; i++) {
   years.push(i);
 }
-const highlightedYears = [1901, 1920, 1940, 1960, 1980, 2000, 2019];
+const highlightedYears = [1920, 1940, 1960, 1980, 2000];
 
 function getOuterRadius(data) {
   yearMax = d3.max(data, d => parseInt(d.year));
