@@ -1,0 +1,7 @@
+.catsex {
+  @include center-horiz-vert;
+  z-index: 9;
+}
+.catsex-container {
+  transform: translate(50%, 50%); 
+}

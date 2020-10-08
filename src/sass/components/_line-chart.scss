@@ -1,0 +1,47 @@
+#sex-per-year {
+  position: absolute;
+  z-index: 101;
+  top: 0;
+  left: 710px;
+}
+
+.axis {
+  path,
+  .tick line {
+    stroke-opacity: 0;
+  }
+  .tick {
+    text {
+      font-size: 1.2rem;
+      fill: $textPale;
+    }
+  }
+}
+
+.line {
+  fill: none;
+  stroke: url('#gradient-sexpercat');
+  stroke-width: 2;
+  stroke-opacity: .8;
+  // &.line-male {
+  //   stroke: $blue;
+  // }
+  // &.line-female {
+  //   stroke: $pink;
+  // }
+}
+
+.area {
+  &.area-male {
+    fill: url('#men-gradient-sexperyear');
+  }
+  &.area-female {
+    fill: url('#women-gradient-sexperyear');
+  }
+}
+
+#sex-per-year {
+  .sex-per-year--group {
+    transform: translate(22px, 503px) rotate(270deg);
+  }
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Nobel prize history</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<div class="container">
+		<div class="center">
+			<h1 class="hide">The Nobel Prize</h1>
+			<div class="quote-wrapper">
+				<p class="quote">For the greatest benefit to humankind</p>
+				<p class="quote-owner">Alfred Nobel</p>
+			</div>
+
+			<div class="graphes-wrapper">
+				<div id="nobel-overview"></div>
+				<div id="color-scale"></div>
+				<div id="sex-per-year"></div>
+				<div id="sex-per-category"></div>
+				<div id="nobel-per-country"></div>
+			</div>
+
+			<!-- Nobel tooltip -->
+			<div id="nobel-tooltip">
+				<div class="nt-container">
+					<div class="nt-top">
+						<div class="nt-category"></div>
+						<div class="nt-name"></div>
+						<div class="nt-location"></div>
+					</div>
+					<div class="nt-quote"></div>
+					<div class="nt-share"></div>
+				</div>
+			</div>
+		</div>
+		</div>
+
+	<!-- Scripts -->
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script src="/js/data-loader.js"></script>
+	<script src="/js/color-scales.js"></script>
+	<script src="/js/nobels-overview.js"></script>
+	<!-- <script src="/js/color-scale.js"></script> -->
+	<!-- <script src="/data/data_sex-per-category_radial.js"></script> -->
+	<script src="/js/sex-per-year.js"></script>
+	<script src="/js/sex-per-category.js"></script>
+	<!-- <script src="/js/sex-per-category_radial.js"></script> -->
+
+	<!-- Function for radial charts -->
+	<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/d3-scale-radial.js"></script>
+	<script src="/js/nobel-per-country.js"></script>
+</body>
+</html>

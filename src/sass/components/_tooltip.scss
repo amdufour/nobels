@@ -1,0 +1,65 @@
+#nobel-tooltip {
+  position: absolute;
+  z-index: 1000;
+  opacity: 0;
+  .nt-container {
+    position: absolute;
+    bottom: 0;
+    left: -200px;
+    width: 400px;
+    padding: 30px $gutter/2;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 1px 5px rgba(36, 36, 36, 0.5);
+    text-align: center;
+  }
+  .nt-category {
+    font-size: 1.5rem;
+    color: $textPale;
+  }
+  .nt-name {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 8px 3px;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: $golden;
+    border-bottom: 1px solid $golden;
+  }
+  .nt-location,
+  .nt-share {
+    margin: 0 auto;
+    max-width: 300px;
+    font-size: 1.3rem;
+    color: $textPale;
+  }
+  .nt-share {
+    margin-top: 5px;
+  }
+  .nt-quote {
+    position: relative;
+    margin-top: 5px;
+    padding: 15px;
+    font-family: $fontSecondary;
+    font-style: italic;
+    .quote-icon {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-image: url(../svg/quote.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      opacity: 0.3;
+      &.quote-icon--left {
+        top: -5px;
+        left: -1px;
+      }
+      &.quote-icon--right {
+        bottom: -16px;
+        right: 13px;
+        transform: rotateZ(180deg);
+      }
+    }
+  }
+}

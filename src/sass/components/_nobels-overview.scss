@@ -1,0 +1,39 @@
+.graphes-wrapper {
+  position: relative;
+}
+#nobel-overview {
+  position: relative;
+  z-index: 100;
+}
+
+// Nobel arcs
+.nobel-arc {
+  stroke-width: 2px;
+  stroke-opacity: 0;
+  transition: all ease-in 100ms;
+  &:hover, &:focus {
+    stroke-opacity: 1;
+    transition: all ease-out 100ms;
+  }
+}
+
+// Text in the middle of the overview
+.overview-title {
+  text {
+    font-family: $fontSecondary;
+    font-size: 2.5rem;
+    font-weight: 600;
+    fill: $golden;
+    text-anchor: middle;
+  }
+}
+
+// Label for each category
+.category-label {
+  textPath {
+    font-family: $fontSecondary;
+    font-size: 2rem;
+    text-transform: uppercase;
+    fill: $golden;
+  }
+}
