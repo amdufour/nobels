@@ -22,3 +22,13 @@ h2 {
 h3 {
   margin: 0 0 7px;
 }
+
+a {
+  color: $golden;
+  text-decoration: none;
+  transition: color ease-in 100ms;
+  &:hover, &:focus {
+    color: $blue;
+    transition: color ease-out 100ms;
+  }
+}
