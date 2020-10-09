@@ -4,13 +4,6 @@ const height_sex_year = 80;
 // Display data - sex distribution per year
 function generateSexPerYear(data, innerRadius, width_sex_year) {
 
-  // Multiply each Female value by -1
-  data.forEach(item => {
-    if (item['sum_women'] !== 0) {
-      item['sum_women'] *= -1;
-    }
-  });
-
   // Append svg to page
   let svg_sex_year = d3.select('#sex-per-year')
     .append('svg')
@@ -34,8 +27,8 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .style('stop-color', '#68BDBF')
     .style('stop-opacity', 0.5);
   linearGradientMen.append('stop')
-    .attr('offset', '90%')
-    .style('stop-color', 'white')
+    .attr('offset', '100%')
+    .style('stop-color', 'rgba(104, 189, 191, 0.1)')
     .style('stop-opacity', 1);
   
   // Create linear gradient for women
@@ -47,12 +40,12 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .attr('y2', '100%');
   linearGradientWomen.append('stop')
     .attr('offset', '0%')
-    .style('stop-color', 'white')
+    .style('stop-color', 'rgba(224, 134, 123, 0.1)')
     .style('stop-opacity', 1);
   linearGradientWomen.append('stop')
-    .attr('offset', '50%')
+    .attr('offset', '100%')
     .style('stop-color', '#E0867B')
-    .style('stop-opacity', 0.5);
+    .style('stop-opacity', 1);
 
   // X scale
   let x_scale_sex_year = d3.scaleLinear()
