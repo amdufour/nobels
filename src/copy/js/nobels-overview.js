@@ -15,6 +15,10 @@ for (let i = yearMin; i <= yearMax; i++) {
 }
 const highlightedYears = [1920, 1940, 1960, 1980, 2000];
 
+
+getOuterRadius(data_nobel_overview);
+generateOverview(data_nobel_overview, categories, dataYearSex, dataCategorySex);
+
 function getOuterRadius(data) {
   yearMax = d3.max(data, d => parseInt(d.year));
   yearsSpan = yearMax - yearMin;
@@ -421,18 +425,10 @@ function generateOverview(data, categories, dataYearSex, dataCategorySex) {
       .append('text')
         .text('PRIZE')
         .attr('y', 47 + 'px');
-
-  
-  // Call the function to generate the sex-per-year graph
-  generateSexPerYear(dataYearSex, innerRadius, outerRadius);
-
-  // Call the function to generate the sex-per-category graph
-  generateSexPerCategory(dataCategorySex, outerRadius, angleCategory);
-
-  // Call the function to generate the nobels-per-country graph
-  generateNobelsPerCountry(angleCategory);
-  
 }
+
+// Call the function to generate the sex-per-year graph
+generateSexPerYear(dataYearSex, innerRadius, outerRadius);
 
 // Helper function - convert degress to radians
 function degreeToRadian(angle) {

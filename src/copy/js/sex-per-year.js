@@ -53,21 +53,6 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .attr('offset', '50%')
     .style('stop-color', '#E0867B')
     .style('stop-opacity', 0.5);
-    
-  // Create linear gradient for women
-  defs.append('radialGradient')
-    .attr('id', 'women-gradient-sexperyear')
-    .attr('gradientUnits', 'userSpaceOnUse')
-    .attr('cx', 0)
-    .attr('cy', 0)
-    .selectAll('stop')
-    .data([
-        {offset: '20%', color: 'white'},
-        {offset: '100%', color: '#F9E7E5'}
-      ])
-    .enter().append('stop')
-    .attr('offset', function(d) { return d.offset; })
-    .attr('stop-color', function(d) { return d.color; });
 
   // X scale
   let x_scale_sex_year = d3.scaleLinear()
