@@ -35,7 +35,7 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .style('stop-opacity', 0.5);
   linearGradientMen.append('stop')
     .attr('offset', '100%')
-    .style('stop-color', 'white')
+    .style('stop-color', 'rgba(104, 189, 191, 0.1)')
     .style('stop-opacity', 1);
   
   // Create linear gradient for women
@@ -47,27 +47,12 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .attr('y2', '100%');
   linearGradientWomen.append('stop')
     .attr('offset', '0%')
-    .style('stop-color', 'white')
+    .style('stop-color', 'rgba(224, 134, 123, 0.1)')
     .style('stop-opacity', 1);
   linearGradientWomen.append('stop')
-    .attr('offset', '50%')
+    .attr('offset', '100%')
     .style('stop-color', '#E0867B')
-    .style('stop-opacity', 0.5);
-    
-  // Create linear gradient for women
-  defs.append('radialGradient')
-    .attr('id', 'women-gradient-sexperyear')
-    .attr('gradientUnits', 'userSpaceOnUse')
-    .attr('cx', 0)
-    .attr('cy', 0)
-    .selectAll('stop')
-    .data([
-        {offset: '20%', color: 'white'},
-        {offset: '100%', color: '#F9E7E5'}
-      ])
-    .enter().append('stop')
-    .attr('offset', function(d) { return d.offset; })
-    .attr('stop-color', function(d) { return d.color; });
+    .style('stop-opacity', 1);
 
   // X scale
   let x_scale_sex_year = d3.scaleLinear()
