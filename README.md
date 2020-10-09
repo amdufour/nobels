@@ -1,4 +1,4 @@
-# Foodprint
+# Nobel Prize distribution
 # by Anne-Marie Dufour - annemariedufour.com
 
 A d3.js visualization of Nobel prizes over the years.
