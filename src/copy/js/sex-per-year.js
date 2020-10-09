@@ -34,7 +34,7 @@ function generateSexPerYear(data, innerRadius, width_sex_year) {
     .style('stop-color', '#68BDBF')
     .style('stop-opacity', 0.5);
   linearGradientMen.append('stop')
-    .attr('offset', '90%')
+    .attr('offset', '100%')
     .style('stop-color', 'white')
     .style('stop-opacity', 1);
   
